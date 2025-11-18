@@ -1,0 +1,339 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: black;
+  color: white;
+  max-width: 1200px;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #0077cc;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgb(39, 36, 36);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav .left a {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+nav .right a {
+  margin-left: 20px;
+  font-size: 16px;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+}
+
+nav .right a i {
+  margin-right: 5px;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+}
+
+.hero-section .text {
+  flex: 1 1 60%;
+  padding-right: 40px;
+}
+
+.hero-section .text h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.hero-section .text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.hero-section .links a {
+  margin-right: 10px;
+  padding: 8px 16px;
+  border: 2px solid grey;
+  border-radius: 4px;
+  color: white;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.hero-section .links a:hover {
+  background-color: #ffffff;
+  color: black;
+}
+
+.hero-section .headshot img {
+  width: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Skills Section */
+.skills-section {
+  padding: 60px 40px;
+  background-color: rgb(27, 33, 37);
+  text-align: center;
+  border:5px solid;
+  border-color: white;
+  border-radius:70px;
+}
+
+.skills-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.skills-section .cells {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.skills-section .cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: black;
+  width:150px;
+  justify-content:center;
+   white-space: nowrap; 
+}
+
+.skills-section .cell img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Testimony Section */
+.testimony-section {
+  padding: 60px 40px;
+  background-color:rgb(27, 33, 37);
+  border:5px solid;
+  border-color: white;
+  border-radius:70px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.testimony-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.testimony-section .group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.testimony-section .person-details {
+  flex: 1;
+  text-align: center;
+}
+
+.testimony-section .person-details img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.testimony-section .text {
+  flex: 2;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 60px 40px;
+  background-color: rgb(27, 33, 37);
+  border:5px solid;
+  border-color:white;
+  border-radius:70px;
+}
+
+.contact-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-section .group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.contact-section .text {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.contact-section form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-section form label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.contact-section form input,
+.contact-section form textarea {
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-section form button {
+  background-color: #0077cc;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-section form button:hover {
+  background-color: #005fa3;
+}
+.projects-section,
+.education-section
+ {
+  padding: 0 50px;
+   border:5px solid;
+  border-color:white;
+  background-color:rgb(27, 33, 37) ;
+  margin-top:50px;
+  margin-bottom:50px;
+  border-radius:70px;
+  text-align:center;
+}
+
+.projects-section h2,
+.education-section h2 {
+  font-size: 35px;
+  margin-bottom: 20px;
+  text-align:center;
+  margin-top:50px;
+}
+
+.project {
+  margin-bottom: 20px;
+}
+
+.project h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+ 
+}
+
+.extracurricular-section{
+padding: 60px 50px;
+   border:5px solid;
+  border-color:white;
+  background-color:rgb(27, 33, 37) ;
+  margin-top:50px;
+  margin-bottom:50px;
+  border-radius:70px;
+  text-align:center;
+
+}
+
+.extracurricular-section h2{
+  margin-top:10px;
+  font-size:32px;
+}
+
+.extracurricular-section h3{
+  margin-top:20px;
+}
+
+.university-details{
+  margin-bottom:50px;
+}
+
+.education-section .deca img{
+  height:3px;
+  width:auto; 
+
+}
+
+.extracurricular-section h4{
+margin-top:20px;
+
+}
+
+.contact-section .group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-section .group form {
+  width: 100%;
+  max-width: 600px;
+}
+.ndp-wrapper {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.ndp-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-top:10px;
+}
+
+.ndp-header img {
+  height: 25px;
+  margin-top:10px;
+}
+
