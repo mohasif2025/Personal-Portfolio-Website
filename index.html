@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +16,7 @@
   <title>Mohammad Asif's Portfolio</title>
 </head>
 <body>
+  <div class=""background-animated">
   <!-- NAVBAR -->
   <nav>
     <div class="left">
@@ -24,7 +24,7 @@
     </div>
 
     <div class="right">
-      <a href="http://github.com" target="_blank" rel="noopener noreferrer">
+      <a href="http://github.com/mohasif2025" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-github"></i>
         <span>Github</span>
       </a>
@@ -83,139 +83,262 @@
       </div>
     </section>
 
-    <!-- SECTION 2: Skills -->
-    <section id="skills" class="skills-section">
-      <h2>  <i class="fa-solid fa-code"></i> Skills </h2>
-      <div class="text">
-       
+ <!-- SECTION 2: Skills -->
+<section id="skills" class="skills-section section-box">
+  <h2 class="Header"><i class="fa-solid fa-code"></i> Skills</h2>
+  
+  <div class="cells">
+    <!-- First Row -->
+    <div class="cell-row">
+      <div class="cell">
+        <img src="images/C.png" alt="C logo">
+        <span>C</span>
       </div>
-
-      <div class="cells">
-        <div class="cell">
-          <img src="images/C.png" alt="html logo">
-          <span>C</span>
-        </div>
-        
-        <div class="cell">
-          <img src="images/C2.png" alt="css logo">
-          <span>C++</span>
-        </div>
-        
-        <div class="cell">
-          <img src="images/Python.svg.png" alt="javascript logo">
-          <span>Python</span>
-        </div>
-        
-        <div class="cell">
-          <img src="images/Java-Logo.png" alt="node logo">
-          <span>Java</span>
-        </div>
-        
-        <div class="cell">
-          <img src="images/javascript-logo-javascript-icon-transparent-free-png.webp" alt="react logo">
-          <span>JavaScript</span>
-        </div>
-        <div class="cell">
-          <img src="images/Matlab.png" alt="react logo">
-          <span>MATLAB</span>
-        </div>
-      </div>
-
       
+      <div class="cell">
+        <img src="images/C2.png" alt="C++ logo">
+        <span>C++</span>
       </div>
-    </section>
-
-    <!-- SECTION: Projects -->
-<section id="projects" class="projects-section">
-  <h2>  <i class="fa-solid fa-diagram-project"></i> Projects</h2>
-  <div class="project-list">
-
-    <div class="project">
-      <h3 class="text-xl font-semibold">- Line Following Car</h3>
-<p class="text-sm text-gray-400 mt-1">
-  Arduino Uno R3 , C++ ,  Autodesk Tinkercad
-</p>
-
-    </div>
-    <div class="project">
-      <h3>- Personal Portfolio Website</h3>
-      <p>Built a responsive portfolio using HTML and CSS to showcase my skills and personal projects.</p>
-    </div>
-
-    <div class="project">
-      <h3>Neuravia.ca - Internship Project</h3>
-      <p></p>
+      
+      <div class="cell">
+        <img src="images/Python.svg.png" alt="Python logo">
+        <span>Python</span>
+      </div>
+      
+      <div class="cell">
+        <img src="images/Java-Logo.png" alt="Java logo">
+        <span>Java</span>
+      </div>
+      
+      <div class="cell">
+        <img src="images/javascript-logo-javascript-icon-transparent-free-png.webp" alt="JavaScript logo">
+        <span>JavaScript</span>
+      </div>
+      
+      <div class="cell">
+        <img src="images/Matlab.png" alt="MATLAB logo">
+        <span>MATLAB</span>
+      </div>
     </div>
 
-    <!-- Add more projects as needed -->
+    <!-- Second Row -->
+    <div class="cell-row">
+      
+      <div class="cell">
+
+        <div class ="AMD">
+        <img src="images/AMD.png" alt="Vivado logo" style="filter: brightness(0) invert(1);">
+        </div>
+        <div class ="vivado">
+        <span>Vivado</span>
+        </div>
+      </div>
+      
+      <div class="cell">
+        <img src="images/KI.png" alt="KiCAD logo">
+        <span>KiCAD</span>
+      </div>
+      
+      <div class="cell">
+        <img src="images/TC.png" alt="Tinkercad logo">
+        <span>Tinkercad</span>
+      </div>
+      
+      <div class="cell">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Arduino_Logo.svg/2560px-Arduino_Logo.svg.png" alt="Arduino logo">
+        <span>Arduino</span>
+      </div>
+      <div class="cell">
+        <img src="images/AC.png" alt="AutoCAD logo" style="filter: brightness(0) invert(1);">
+        <span>AutoCAD</span>
+      </div>
+      
+      
+      
+      <div class="cell">
+        <img src="images/SW.png" alt="Adafruit logo" style="filter: brightness(0) invert(1);">
+        <span>SolidWorks</span>
+      </div>
+    </div>
   </div>
 </section>
+  <!-- SECTION: Projects -->
+<section id="projects" class="projects-section">
+  <h2 class="Header"><i class="fa-solid fa-diagram-project"></i> Projects</h2>
+
+  <div class="project-list">
+
+    <!-- Project 1 -->
+    <div class="project">
+      <div class ="project-header">
+      <h3>Line Following Car – Arduino Uno R3</h3>
+           <a
+      href="https://github.com/yourusername/line-following-car"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="project-github"
+      aria-label="GitHub Repository"
+    >
+      <i class="fa-brands fa-github"></i>
+    </a>
+    </div>
+      <p class="tech">C++ • Arduino IDE • Embedded Hardware</p>
+      <ul>
+        <li>Designed and built an autonomous line-following robot using IR sensors</li>
+        <li>Developed embedded C++ logic for real-time motor control</li>
+        <li>Created full 3D chassis model and circuit using Autodesk Tinkercad</li>
+      </ul>
+     
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project">
+      <div class ="project-header">
+      <h3>Neuravia.ca – Internship Project</h3>
+           <a
+      href="https://github.com/yourusername/line-following-car"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="project-github"
+      aria-label="GitHub Repository"
+    >
+      <i class="fa-brands fa-github"></i>
+    </a>
+      </div>
+      <p class="tech">HTML • CSS • React.js • TypeScript • Figma • Git/GitHub • Vercel</p>
+      <ul>
+        <li>Built using React.js, TypeScript, HTML, and CSS with a modular, component-based structure</li>
+        <li>Designed complete UI/UX in Figma before development</li>
+        <li>Deployed the website on Vercel with optimized performance</li>
+        <li>Used Git/GitHub for full version control and workflow management</li>
+      </ul>
+          
+    </div>
+    <!-- Project 2 -->
+    <div class="project">
+      <div class="project-header">
+      <h3>Personal Portfolio Website</h3>
+           <a
+      href="https://github.com/yourusername/line-following-car"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="project-github"
+      aria-label="GitHub Repository"
+    >
+      <i class="fa-brands fa-github"></i>
+    </a>
+    </div>
+      <p class="tech">HTML • CSS • Responsive Design</p>
+      <ul>
+        <li>Designed and coded a fully responsive personal portfolio website</li>
+        <li>Showcases my projects, skills, experience, and contact details</li>
+        <li>Optimized layout and accessibility for all screen sizes</li>
+      </ul>
+        
+    </div>
+
+    
+
+  </div>
+</section>
+
 
 
     <!-- SECTION 3: Testimony -->
-    <section id="experience" class="testimony-section">
-      <h2>  <i class="fa-solid fa-pen"></i> Experience</h2>
+   <section id="experience" class="education-section">
+  <div class="experience-header">
+    <h2 class="Header"><i class="fa-solid fa-pen"></i> Experience</h2>
+  </div>
 
-      <div class="group">
-        <div class="person-details">
-          <img src="images/testimony-headshot.webp">
-          <p>Mohammad Asif</p>
-          <p></p>
-        </div>
-
-        <div class="text">
-          
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION: Education -->
-<section id="education" class="education-section">
-  <h2>  <i class="fa-solid fa-graduation-cap"></i> Education</h2>
-  <div class="education-details">
-    <h3><img src="images/TMU.webp" alt="DECA logo" style="height: 25px; vertical-align: middle;"> Toronto Metropolitan University</h3>
-    <p class="university-details">Bachelor of Engineering - Electrical Engineering
-      (2025-2030)
+  <div class="project">
+    <h3>Software Engineering Intern — NeuraVia (July 2025 - October 2025)</h3>
+    <p class="tech">
+      React.js • TypeScript • HTML/CSS • Figma • Vercel • Git/GitHub
     </p>
-    <p>
+    <ul>
+      <li>Developed production-ready components using React.js and TypeScript</li>
+      <li>Designed UI/UX workflows and prototypes in Figma</li>
+      <li>Improved responsiveness, performance, and accessibility across the site</li>
+      <li>Deployed updates using Vercel and maintained version control with Git/GitHub</li>
+    </ul>
+   <img src="images/NV.png" class="experience-logo" alt="NeuraVia Logo">
 
-    </p>
+
   </div>
 </section>
 
-<!-- SECTION: Education -->
-<section id="ec" class="extracurricular-section">
-  <h2>  <i class="fa-solid fa-medal"></i> Extracurriculars</h2>
-  <div class="education-details">
-   <h3>
-  <img src="images/DECA.jpg" alt="DECA logo" style="height: 25px; vertical-align: middle;">
-  DECA
-</h3>
 
-<p>Finance Mentor - Mentor of the Month (2024-2025)</p>
-<p>Top 10 Overall Scores - Entrepreneurship Regionals (2024-2025)</p>
-<h4>
-  <img src="images/MUN.jpg" alt="DECA logo" style="height: 30px; vertical-align: middle;">
-  Model United Nations
-</h4>
-<p>Club President (2024-2025)</p>
+   <!-- SECTION: Education -->
+<section id="education" class="section-box">
+  <h2 class="Header"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+
+<!-- Update your education section HTML to use project class -->
+<div class="project">  <!-- Add "project" class here -->
+  <div class="school-header">
+    <img src="images/TMU.webp" class="tmu-logo" alt="TMU Logo" height="25px">
+    <h3>Toronto Metropolitan University</h3>
   </div>
-  <!-- NDP Section inside Extracurriculars -->
-<div class="ndp-wrapper">
-  <div class="ndp-header">
-    <img src="images/NDP.png" alt="NDP logo">
-    <h3>New Democratic Party</h3>
-  </div>
-  <p>Campaign Staff | Canvassing and Information (2024)</p>
+  <p><strong>Bachelor of Electrical Engineering</strong> (2025–2030)</p>
+  <p>Focus: Embedded Systems, VLSI Design, Hardware Engineering</p>
+</div>
+</section>
+
+<!-- SECTION: Extracurriculars -->
+<section id="ec" class="section-box">
+  <h2 class ="Header"><i class="fa-solid fa-medal"></i> Extracurriculars</h2>
+  
+  <!-- DECA Card -->
+  
+  <!-- Model UN Card -->
+  <!-- DECA Card -->
+
+  <!-- TMU FEAS Engineering Committee Card -->
+<div class="extracurricular-card">
+  <h4>
+    <img src="images/feas.jpg" alt="TMU FEAS logo">
+    First-Year Engineering Committee — TMU FEAS
+  </h4>
+  <p class="role">Committee Member (2025–2026)</p>
+  <p>Collaborated with faculty and student leaders to support first-year engineering initiatives</p>
+  <p>Helped organize academic, social, and community-building events for engineering students</p>
 </div>
 
+<div class="extracurricular-card">
+  <h3>
+    <img src="images/DECA.jpg" alt="DECA logo">
+    DECA
+  </h3>
+  <p class="role">Finance Mentor - Mentor of the Month (2024-2025)</p>
+  <p>Achievement - Top 10 Overall Scores in Entrepreneurship Regionals (2024-2025)</p>
+  <p>Mentored students in financial literacy and business strategy development</p>
+</div>
 
+<!-- Model UN Card -->
+<div class="extracurricular-card">
+  <h4>
+    <img src="images/MUN.jpg" alt="Model UN logo">
+    Model United Nations
+  </h4>
+  <p class="role">Club President (2024-2025)</p>
+  <p>Led a team of 30+ members in organizing conferences and debates</p>
+  <p>Developed public speaking and diplomatic negotiation skills</p>
+</div>
+
+<!-- NDP Card -->
+<div class="ndp-wrapper">
+  <div class="ndp-header">
+    <img src="images/NDP.png"margin-top="5px" alt="NDP logo">
+    <h3>NDP New Democratic Party</h3>
+  </div>
+  <p class="role">Campaign Staff | Canvassing and Information (2024)</p>
+  <p>Engaged with community members to discuss political platforms</p>
+</div>
 </section>
 
-
     <!-- SECTION 4: Contact -->
-    <section id="contact" class="contact-section">
-      <h2>   <i class="fa-solid fa-envelope"></i> Contact</h2>
+    <section id="contact" class="contact-section section-box">
+
+      <h2 class="Header">   <i class="fa-solid fa-envelope"></i> Contact</h2>
 
       <div class="group">
         <div class="text">
@@ -237,6 +360,8 @@
 
       </div>
     </section>
+    
   </main>
+  </div>
 </body>
 </html>
