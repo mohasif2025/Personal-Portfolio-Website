@@ -1,3 +1,4 @@
+
 /* Reset and base styles */
 * {
   margin: 0;
@@ -28,7 +29,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background-color: rgb(39, 36, 36);
+  background-color: black);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -96,52 +97,243 @@ nav .right a i {
   object-fit: cover;
 }
 
-/* Skills Section */
-.skills-section {
-  padding: 60px 40px;
-  background-color: rgb(27, 33, 37);
-  text-align: center;
-  border:5px solid;
-  border-color: white;
-  border-radius:70px;
+/* Skills section - match Projects section height */
+#skills {
+  padding: 30px 50px !important; /* Increased padding */
+  min-height: 450px; /* Increased minimum height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  border-radius: 70px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  position: relative;
 }
 
-.skills-section h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
+/* Skills section heading */
+#skills h2 {
+  margin-bottom: 40px; /* More space below heading */
+  font-size: 35px;
 }
 
+/* Skills cells container - fill vertical space */
 .skills-section .cells {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: column;
+  gap: 35px; /* Increased gap between rows */
+  margin-top: 20px;
+  flex: 1; /* Take up available space */
+  justify-content: space-evenly; /* Evenly distribute rows */
+  min-height: 300px; /* Ensure minimum height for content */
 }
 
+/* Make both rows the same length by distributing cells evenly */
+.skills-section .cell-row {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping within row */
+  justify-content: center;
+  gap: 30px; /* Increased gap between cells */
+  width: 100%;
+  padding: 15px 0;
+  align-items: center;
+}
+
+/* Individual skill cells - even bigger and matching */
 .skills-section .cell {
   display: flex;
   align-items: center;
-  gap: 10px;
-  border: 1px solid black;
-  padding: 10px 20px;
-  border-radius: 5px;
-  background-color: black;
-  width:150px;
-  justify-content:center;
-   white-space: nowrap; 
+  gap: 15px;
+  border: 2px solid #555;
+  padding: 22px 35px; /* Even larger padding */
+  border-radius: 15px; /* More rounded */
+  background-color: rgba(0, 0, 0, 0.4);
+  flex: 0 0 auto; /* Don't grow or shrink */
+  min-width: 200px; /* Wider minimum width */
+  justify-content: center;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Larger skill icons */
 .skills-section .cell img {
-  width: 30px;
-  height: 30px;
+  width: 42px; /* Even bigger icons */
+  height: 42px;
+  object-fit: contain;
+}
+
+/* Larger text in skill cells */
+.skills-section .cell span {
+  font-size: 19px; /* Even bigger text */
+  font-weight: 500;
+  color: white;
+}
+
+/* Hover effect for skill cells */
+.skills-section .cell:hover {
+  transform: translateY(-6px) scale(1.05);
+  border-color: #0077cc;
+  box-shadow: 0 10px 25px rgba(0, 119, 204, 0.5);
+  background-color: rgba(0, 119, 204, 0.15);
+}
+
+/* Ensure both rows have the same number of cells and same width */
+.skills-section .cell-row:first-child .cell {
+  /* First row cells */
+}
+
+.skills-section .cell-row:last-child .cell {
+  /* Second row cells - same styling */
+}
+
+/* Project section reference - ensure they match */
+.projects-section {
+  min-height: 500px; /* Reference height for projects */
+}
+
+/* Make skills section visually similar in height to projects */
+#skills:after {
+  content: '';
+  display: block;
+  height: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .skills-section .cell {
+    min-width: 180px;
+    padding: 20px 30px;
+  }
+  
+  .skills-section .cell-row {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #skills {
+    min-height: 420px;
+  }
+  
+  .skills-section .cell {
+    min-width: 170px;
+    padding: 18px 28px;
+  }
+  
+  .skills-section .cell img {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .skills-section .cell span {
+    font-size: 18px;
+  }
+  
+  .skills-section .cell-row {
+    gap: 22px;
+  }
+}
+
+@media (max-width: 900px) {
+  .skills-section .cell-row {
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center;
+  }
+  
+  .skills-section .cell {
+    min-width: 160px;
+    padding: 16px 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  #skills {
+    min-height: 380px;
+    padding: 25px 30px !important;
+  }
+  
+  .skills-section .cells {
+    gap: 30px;
+  }
+  
+  .skills-section .cell {
+    min-width: 150px;
+    padding: 15px 22px;
+    gap: 12px;
+  }
+  
+  .skills-section .cell img {
+    width: 34px;
+    height: 34px;
+  }
+  
+  .skills-section .cell span {
+    font-size: 16px;
+  }
+  
+  .skills-section .cell-row {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  #skills {
+    min-height: 350px;
+  }
+  
+  .skills-section .cell {
+    min-width: 140px;
+    padding: 14px 20px;
+    gap: 10px;
+  }
+  
+  .skills-section .cell img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .skills-section .cell span {
+    font-size: 15px;
+  }
+  
+  .skills-section .cell-row {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  #skills {
+    min-height: 320px;
+    padding: 20px 25px !important;
+  }
+  
+  .skills-section .cell {
+    min-width: 130px;
+    padding: 12px 18px;
+    gap: 8px;
+  }
+  
+  .skills-section .cell img {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .skills-section .cell span {
+    font-size: 14px;
+  }
+  
+  .skills-section .cell-row {
+    gap: 12px;
+  }
 }
 
 /* Testimony Section */
 .testimony-section {
   padding: 60px 40px;
-  background-color:rgb(27, 33, 37);
+  background-color:black;
   border:5px solid;
-  border-color: white;
+
   border-radius:70px;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -182,10 +374,9 @@ nav .right a i {
 /* Contact Section */
 .contact-section {
   padding: 60px 40px;
-  background-color: rgb(27, 33, 37);
-  border:5px solid;
-  border-color:white;
-  border-radius:70px;
+ 
+ 
+
 }
 
 .contact-section h2 {
@@ -222,7 +413,7 @@ nav .right a i {
   padding: 10px;
   margin-top: 5px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
+
   border-radius: 4px;
   font-family: 'Poppins', sans-serif;
 }
@@ -244,9 +435,9 @@ nav .right a i {
 .education-section
  {
   padding: 0 50px;
-   border:5px solid;
-  border-color:white;
-  background-color:rgb(27, 33, 37) ;
+  
+
+
   margin-top:50px;
   margin-bottom:50px;
   border-radius:70px;
@@ -273,9 +464,9 @@ nav .right a i {
 
 .extracurricular-section{
 padding: 60px 50px;
-   border:5px solid;
-  border-color:white;
-  background-color:rgb(27, 33, 37) ;
+  
+ 
+ 
   margin-top:50px;
   margin-bottom:50px;
   border-radius:70px;
@@ -337,3 +528,1422 @@ margin-top:20px;
   margin-top:10px;
 }
 
+.projects-section {
+  padding: 60px 50px;
+
+ 
+  border-radius: 70px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.project-list {
+  margin-top: 40px;
+  text-align: left;
+}
+
+.project {
+  margin-bottom: 40px;
+  background-color: black;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid grey;
+}
+
+.project h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.project .tech {
+  font-size: 14px;
+  color: #bdbdbd;
+  margin-bottom: 10px;
+}
+
+.project ul {
+  margin-left: 20px;
+  line-height: 1.6;
+}
+
+.project ul li {
+  margin-bottom: 6px;
+}
+
+
+.projects-section {
+  padding-top: 20px; /* Reduce from 60px */
+}
+
+/* UNIVERSAL SECTION STYLE (matches Projects Section) */
+.section-box {
+  padding: 20px 50px;
+
+
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.section-box h2 {
+  font-size: 35px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+
+#experience .experience-box {
+  text-align: left;
+}
+
+
+
+#experience .tech {
+  text-align: left !important;
+}
+
+#experience ul {
+  margin-left: 20px; /* keeps bullets neat */
+  text-align: le
+}
+
+#experience text-sm text-gray-400 mt-1{
+   margin-left: 14px; /* keeps bullets neat */
+  text-align: le
+}
+
+#experience .tech {
+  text-align: left !important;
+  width: 100%;
+  display: block;
+}
+
+.expbox{
+background-color: black;
+}
+
+/* EXPERIENCE section: force left alignment for all inner content */
+#experience .project,
+#experience h3,
+#experience p,
+#experience ul,
+#experience li {
+  text-align: left !important;
+}
+/* SKILLS section: match Projects/Experience layout */
+#skills {
+  padding: 20px 50px !important;
+ 
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#education{
+  
+  padding: 20px 50px !important;
+
+  border-radius: 70px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* Inside skills, align text left but keep skill cells centered */
+
+/* ============================
+   REPLACE/REMOVE old header spacing
+   ============================ */
+
+/* remove the huge top margin that separates headings from content */
+/* ---------- Unified section heading size (fixes experience header) ---------- */
+.section-box h2,
+.projects-section h2,
+#experience h2,
+#education h2,
+#ec h2,
+#contact h2 {
+  font-size: 35px;       /* consistent big heading */
+  margin-bottom: 20px;
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* ---------- Re-usable "card" used by Projects — apply to other sections ---------- */
+.section-card,
+.section-box .project {
+  background-color: black;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #6e6e6e;
+  margin-top: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left; /* left-align inner content */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+/* Title inside the card that keeps logo proportion and inline alignment */
+.section-card .card-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+/* keep logos proportional without stretching */
+.section-card .card-title img {
+  height: 28px;
+  width: auto;
+  display: inline-block;
+}
+
+/* subtitle / meta text (matches .tech in projects) */
+.section-card .card-meta {
+  font-size: 14px;
+  color: #bdbdbd;
+  margin-bottom: 12px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Simple fade-in animation */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover animations */
+.hero-section .links a,
+.skills-section .cell,
+.project,
+.edu-entry,
+.education-details,
+.ndp-wrapper,
+.contact-section .group form {
+  transition: all 0.3s ease;
+}
+
+.hero-section .links a:hover,
+.skills-section .cell:hover,
+.project:hover,
+.edu-entry:hover,
+.education-details:hover,
+.ndp-wrapper:hover,
+.contact-section .group form:hover {
+  transform: translateY(-5px);
+}
+
+/* Navbar link hover */
+nav .right a {
+  transition: all 0.3s ease;
+}
+
+nav .right a:hover {
+  transform: translateY(-2px);
+}
+
+/* Headshot image hover */
+.hero-section .headshot img {
+  transition: transform 0.3s ease;
+}
+
+.hero-section .headshot img:hover {
+  transform: scale(1.05);
+}
+/* Website fade in on load */
+body {
+  animation: pageFadeIn 1s ease-in-out;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+/* Education Section - Match Projects style */
+#education {
+  padding: 20px 50px;
+  
+
+  border-radius: 70px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+#education h2 {
+  font-size: 35px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.edu-entry {
+  background-color: black;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid grey;
+  margin-top: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+/* Extracurriculars Section - Match Projects style */
+#ec {
+  padding: 20px 50px;
+ 
+  border-radius: 70px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+#ec h2 {
+  font-size: 35px;
+  margin-bottom: 20px;
+
+  text-align: center;
+}
+
+.education-details,
+.ndp-wrapper {
+  background-color: black;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid grey;
+  margin-top: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+/* Extracurriculars Section - Match Projects style */
+#ec {
+  padding: 20px 50px;
+ 
+
+  border-radius: 70px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+#ec h2 {
+  font-size: 35px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Individual extracurricular cards */
+.extracurricular-card {
+  background-color: black;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid grey;
+  margin-top: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.extracurricular-card h3,
+.extracurricular-card h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.extracurricular-card img {
+  height: 25px;
+  width: auto;
+}
+
+.extracurricular-card p {
+  margin-bottom: 8px;
+  padding-left: 15px;
+}
+
+/* NDP card */
+.ndp-wrapper {
+  background-color: black;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid grey;
+  margin-top: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+/* NDP card - fixed alignment */
+.ndp-wrapper {
+  background-color: black;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid grey;
+  margin-top: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left; /* Changed from center to left */
+}
+
+.ndp-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  text-align: left; /* Ensure header text aligns left */
+}
+
+.ndp-header img {
+  height: 25px;
+  width: auto;
+}
+
+.ndp-header h3 {
+  color: white;
+  margin: 0; /* Remove default margins */
+  text-align: left;
+}
+
+.ndp-wrapper p {
+  margin-bottom: 8px;
+  text-align: left; /* Ensure paragraphs align left */
+}
+/* NDP card - fixed left alignment */
+.ndp-wrapper {
+  background-color: black;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid grey;
+  margin-top: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.ndp-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  justify-content: flex-start; /* Force left alignment */
+  width: 100%;
+}
+
+.ndp-header img {
+  height: 25px;
+  width: auto;
+}
+
+.ndp-header h3 {
+  color: white;
+  margin: 0;
+  text-align: left;
+}
+
+.ndp-wrapper p {
+  margin-bottom: 8px;
+  text-align: left;
+  padding-left: 0; /* Remove any left padding */
+}
+/* Extracurricular cards - match project font sizes */
+.extracurricular-card h3,
+.extracurricular-card h4,
+.ndp-header h3 {
+  font-size: 22px; /* Match project h3 size */
+  margin-bottom: 8px;
+  color: white;
+}
+
+.extracurricular-card p,
+.ndp-wrapper p {
+  font-size: 16px; /* Match project paragraph size */
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.extracurricular-card strong,
+.ndp-wrapper strong {
+  font-weight: 600; /* Match project bold text */
+}
+
+/* Tech/meta text equivalent for extracurriculars */
+.extracurricular-card .role,
+.ndp-wrapper .role {
+  font-size: 14px; /* Match project .tech size */
+  color: #bdbdbd;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+/* Add hover effects to extracurricular cards */
+.extracurricular-card,
+.ndp-wrapper {
+  transition: all 0.3s ease;
+}
+
+.extracurricular-card:hover,
+.ndp-wrapper:hover {
+  transform: translateY(-5px);
+  border-color: #0077cc;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Add blue highlight hover effect to ALL cards */
+.project:hover,
+.extracurricular-card:hover,
+.ndp-wrapper:hover,
+.edu-entry:hover {
+  transform: translateY(-5px);
+  border-color: #0077cc;
+  box-shadow: 0 8px 25px rgba(0, 119, 204, 0.3);
+}
+
+/* Ensure all cards have transition */
+.project,
+.extracurricular-card,
+.ndp-wrapper,
+.edu-entry {
+  transition: all 0.3s ease;
+}
+
+/* Experience Section - match Projects header margin */
+#experience {
+  padding-top: 20px; /* Same as projects section */
+}
+
+#experience h2 {
+  margin-top: 10px; /* Same as projects h2 */
+}
+
+/* TMU logo - match extracurricular logo size and alignment */
+/* TMU logo - smaller size */
+.edu-entry .TMU {
+  height: 5px; /* Smaller than extracurricular logos */
+  width: auto;
+  margin-bottom: 0;
+  filter: brightness(0) invert(1);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Update education entry to use flex layout like extracurriculars */
+.edu-entry {
+  text-align: left; /* Change from center to left */
+}
+
+.edu-entry .school-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+/* NDP header alignment fix */
+.ndp-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.NDP.png {
+  height: 25px; /* Match TMU logo size */
+  width: auto;
+  display: block; /* Ensure proper alignment */
+}
+
+.ndp-header h3 {
+  color: white;
+  margin: 0;
+  font-size: 22px; /* Match other headers */
+  line-height: 1; /* Prevent extra spacing */
+}
+
+.project {
+  position: relative; /* allows absolute positioning inside */
+}
+
+.experience-logo {
+  position: absolute;
+  bottom: 25px;   /* move up/down inside the box */
+  right: 90px;    /* move left/right inside the box */
+  height: 170px;  /* adjust size as needed */
+  width: auto;
+  pointer-events: none;
+}
+/* FLOAT ON HOVER — Contact form individual elements */
+.contact-section .group form input:hover,
+.contact-section .group form textarea:hover,
+.contact-section .group form button:hover {
+  transform: translateY(-5px);
+  border-color: #0077cc;
+  box-shadow: 0 8px 25px rgba(0, 119, 204, 0.3);
+}
+.contact-section .group form input,
+.contact-section .group form textarea,
+.contact-section .group form button {
+  transition: all 0.3s ease;
+}
+.extracurricular-card h3 img,
+.extracurricular-card h4 img {
+  width: auto;
+  height: 50px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+/* Skills section layout */
+.skills-section .cells {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.skills-section .cell-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.skills-section .cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #444;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: black;
+  min-width: 150px;
+  justify-content: center;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.skills-section .cell:hover {
+  transform: translateY(-3px);
+  border-color: #0077cc;
+  box-shadow: 0 5px 15px rgba(0, 119, 204, 0.2);
+}
+
+.skills-section .cell img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+/* Make the second row wrap to 3 items per row on smaller screens */
+@media (max-width: 768px) {
+  .skills-section .cell {
+    min-width: 130px;
+    padding: 10px 15px;
+  }
+  
+  .skills-section .cell-row {
+    gap: 10px;
+  }
+}
+
+/* Background + centered content */
+body {
+  min-height: 100vh;                      /* allows page to expand */
+  background: linear-gradient(270deg,#101012,rgb(14, 10, 55), #0c0b0e);
+  background-size: 400% 400%;
+  animation: moveGradient 10s ease infinite;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;                    /* centers horizontally */
+  justify-content: flex-start;            /* keeps content at top */
+}
+    
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* Skills section - optimized for perfect fit */
+#skills {
+  padding: 35px 40px !important;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  border-radius: 70px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* Skills section heading */
+#skills h2 {
+  margin-bottom: 35px;
+  font-size: 32px;
+  text-align: center;
+}
+
+/* Skills cells container - optimized spacing */
+.skills-section .cells {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex: 1;
+  justify-content: center;
+}
+
+/* Each row - centered */
+.skills-section .cell-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+/* Individual skill cells - now with auto width for better fit */
+.skills-section .cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #555;
+  padding: 15px 18px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.4);
+  flex: 1;
+  min-height: 75px;
+  min-width: 0;
+  max-width: none; /* Remove fixed max-width */
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  overflow: visible; /* Allow text to show fully */
+}
+
+/* Logo container - fixed width */
+.skills-section .cell .logo-container {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Skill logos */
+.skills-section .cell img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+/* Programming language logos */
+.skills-section .cell:nth-child(1) img, /* C++ */
+.skills-section .cell:nth-child(2) img, /* Python */
+.skills-section .cell:nth-child(3) img, /* Java */
+.skills-section .cell:nth-child(4) img { /* JavaScript */
+  width: 32px;
+  height: auto;
+}
+
+/* Engineering tools logos */
+.skills-section .cell:nth-child(5) img, /* MATLAB */
+.skills-section .cell:nth-child(6) img, /* Vivado */
+.skills-section .cell:nth-child(7) img, /* KiCAD */
+.skills-section .cell:nth-child(8) img, /* Tinkercad */
+.skills-section .cell-row:last-child .cell:nth-child(1) img, /* Arduino */
+.skills-section .cell-row:last-child .cell:nth-child(2) img, /* AutoCAD */
+.skills-section .cell-row:last-child .cell:nth-child(3) img, /* SolidWorks */
+.skills-section .cell-row:last-child .cell:nth-child(4) img { /* Tinkercad */
+  height: 32px;
+  width: auto;
+}
+
+/* Text styling - with proper overflow handling */
+.skills-section .cell span {
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  flex-shrink: 0; /* Don't shrink text */
+  text-align: center;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center text horizontally */
+  min-width: 0;
+  overflow: visible; /* Allow full text to show */
+  text-overflow: clip; /* Don't truncate with ellipsis */
+  white-space: nowrap;
+}
+
+/* PERFECTLY CENTERED for specific cells: C++, Python, Java, JavaScript, Vivado, KiCAD */
+/* First row programming languages */
+.skills-section .cell-row:first-child .cell:nth-child(1), /* C++ */
+.skills-section .cell-row:first-child .cell:nth-child(2), /* Python */
+.skills-section .cell-row:first-child .cell:nth-child(3), /* Java */
+.skills-section .cell-row:first-child .cell:nth-child(4) { /* JavaScript */
+  justify-content: center;
+  padding: 15px 15px; /* Balanced padding */
+}
+
+/* Second row - Vivado and KiCAD */
+.skills-section .cell-row:last-child .cell:nth-child(2), /* Vivado */
+.skills-section .cell-row:last-child .cell:nth-child(3) { /* KiCAD */
+  justify-content: center;
+  padding: 15px 15px; /* Balanced padding */
+}
+
+/* Logo container spacing for centered cells */
+.skills-section .cell-row:first-child .cell:nth-child(1) .logo-container, /* C++ */
+.skills-section .cell-row:first-child .cell:nth-child(2) .logo-container, /* Python */
+.skills-section .cell-row:first-child .cell:nth-child(3) .logo-container, /* Java */
+.skills-section .cell-row:first-child .cell:nth-child(4) .logo-container, /* JavaScript */
+.skills-section .cell-row:last-child .cell:nth-child(2) .logo-container, /* Vivado */
+.skills-section .cell-row:last-child .cell:nth-child(3) .logo-container { /* KiCAD */
+  margin-right: 8px; /* Balanced spacing for centered layout */
+}
+
+/* Text for centered cells - perfect centering */
+.skills-section .cell-row:first-child .cell:nth-child(1) span, /* C++ */
+.skills-section .cell-row:first-child .cell:nth-child(2) span, /* Python */
+.skills-section .cell-row:first-child .cell:nth-child(3) span, /* Java */
+.skills-section .cell-row:first-child .cell:nth-child(4) span, /* JavaScript */
+.skills-section .cell-row:last-child .cell:nth-child(2) span, /* Vivado */
+.skills-section .cell-row:last-child .cell:nth-child(3) span { /* KiCAD */
+  justify-content: center;
+  text-align: center;
+  flex: none; /* Don't stretch */
+  width: auto;
+}
+
+/* FIX for SolidWorks cutoff - ensure enough space */
+.skills-section .cell-row:last-child .cell:nth-child(4) { /* SolidWorks */
+  padding: 15px 20px; /* Extra horizontal padding for longer name */
+  justify-content: center;
+}
+
+.skills-section .cell-row:last-child .cell:nth-child(4) span { /* SolidWorks */
+  white-space: nowrap;
+  overflow: visible;
+  letter-spacing: -0.1px; /* Slightly tighter spacing */
+}
+
+/* Default spacing for other cells */
+.skills-section .cell .logo-container {
+  margin-right: 10px;
+}
+
+/* MATLAB, Arduino, AutoCAD, Tinkercad - left aligned with more space */
+.skills-section .cell-row:first-child .cell:nth-child(5), /* MATLAB */
+.skills-section .cell-row:last-child .cell:nth-child(1), /* Arduino */
+.skills-section .cell-row:last-child .cell:nth-child(4), /* Tinkercad - in 2nd position */
+.skills-section .cell-row:last-child .cell:nth-child(5) { /* AutoCAD - adjust based on your actual order */
+  justify-content: flex-start;
+}
+
+.skills-section .cell-row:first-child .cell:nth-child(5) .logo-container, /* MATLAB */
+.skills-section .cell-row:last-child .cell:nth-child(1) .logo-container, /* Arduino */
+.skills-section .cell-row:last-child .cell:nth-child(4) .logo-container, /* Tinkercad */
+.skills-section .cell-row:last-child .cell:nth-child(5) .logo-container { /* AutoCAD */
+  margin-right: 12px; /* More space for left-aligned cells */
+}
+
+/* Hover effect */
+.skills-section .cell:hover {
+  transform: translateY(-4px) scale(1.03);
+  border-color: #0077cc;
+  box-shadow: 0 8px 20px rgba(0, 119, 204, 0.5);
+  background-color: rgba(0, 119, 204, 0.15);
+}
+
+/* Responsive adjustments */
+
+/* Large screens */
+@media (min-width: 1200px) {
+  .skills-section .cells {
+    max-width: 1100px; /* Slightly wider */
+  }
+  
+  .skills-section .cell {
+    padding: 16px 20px;
+    min-height: 78px;
+  }
+  
+  .skills-section .cell-row {
+    gap: 22px;
+  }
+  
+  .skills-section .cell .logo-container {
+    width: 38px;
+    height: 38px;
+  }
+  
+  /* Centered cells */
+  .skills-section .cell-row:first-child .cell:nth-child(1) .logo-container,
+  .skills-section .cell-row:first-child .cell:nth-child(2) .logo-container,
+  .skills-section .cell-row:first-child .cell:nth-child(3) .logo-container,
+  .skills-section .cell-row:first-child .cell:nth-child(4) .logo-container,
+  .skills-section .cell-row:last-child .cell:nth-child(2) .logo-container,
+  .skills-section .cell-row:last-child .cell:nth-child(3) .logo-container {
+    margin-right: 10px;
+  }
+  
+  /* SolidWorks fix */
+  .skills-section .cell-row:last-child .cell:nth-child(4) { /* SolidWorks */
+    padding: 16px 22px;
+  }
+  
+  .skills-section .cell span {
+    font-size: 16px;
+  }
+}
+
+/* Medium screens */
+@media (max-width: 1199px) and (min-width: 992px) {
+  #skills {
+    min-height: 360px;
+  }
+  
+  .skills-section .cell {
+    padding: 14px 16px;
+    min-height: 70px;
+  }
+  
+  .skills-section .cell .logo-container {
+    width: 34px;
+    height: 34px;
+  }
+  
+  /* Centered cells */
+  .skills-section .cell-row:first-child .cell:nth-child(1),
+  .skills-section .cell-row:first-child .cell:nth-child(2),
+  .skills-section .cell-row:first-child .cell:nth-child(3),
+  .skills-section .cell-row:first-child .cell:nth-child(4),
+  .skills-section .cell-row:last-child .cell:nth-child(2),
+  .skills-section .cell-row:last-child .cell:nth-child(3) {
+    padding: 14px 14px;
+  }
+  
+  /* SolidWorks fix */
+  .skills-section .cell-row:last-child .cell:nth-child(4) { /* SolidWorks */
+    padding: 14px 18px;
+  }
+  
+  .skills-section .cell span {
+    font-size: 15px;
+  }
+  
+  .skills-section .cell-row {
+    gap: 18px;
+  }
+}
+
+/* Tablet screens */
+@media (max-width: 991px) and (min-width: 768px) {
+  #skills {
+    min-height: 340px;
+    padding: 25px 30px !important;
+  }
+  
+  .skills-section .cells {
+    max-width: 900px;
+    gap: 20px;
+  }
+  
+  .skills-section .cell {
+    padding: 12px 14px;
+    min-height: 65px;
+  }
+  
+  .skills-section .cell .logo-container {
+    width: 32px;
+    height: 32px;
+  }
+  
+  /* Centered cells */
+  .skills-section .cell-row:first-child .cell:nth-child(1),
+  .skills-section .cell-row:first-child .cell:nth-child(2),
+  .skills-section .cell-row:first-child .cell:nth-child(3),
+  .skills-section .cell-row:first-child .cell:nth-child(4),
+  .skills-section .cell-row:last-child .cell:nth-child(2),
+  .skills-section .cell-row:last-child .cell:nth-child(3) {
+    padding: 12px 12px;
+  }
+  
+  /* SolidWorks fix */
+  .skills-section .cell-row:last-child .cell:nth-child(4) { /* SolidWorks */
+    padding: 12px 16px;
+  }
+  
+  .skills-section .cell span {
+    font-size: 14px;
+  }
+  
+  .skills-section .cell-row:last-child .cell:nth-child(4) span { /* SolidWorks */
+    font-size: 13.5px;
+  }
+  
+  .skills-section .cell-row {
+    gap: 15px;
+  }
+}
+
+/* Small tablet */
+@media (max-width: 767px) and (min-width: 576px) {
+  #skills {
+    min-height: 320px;
+    padding: 20px 25px !important;
+  }
+  
+  .skills-section .cells {
+    gap: 18px;
+  }
+  
+  .skills-section .cell {
+    padding: 10px 12px;
+    min-height: 60px;
+  }
+  
+  .skills-section .cell .logo-container {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .skills-section .cell span {
+    font-size: 13px;
+  }
+  
+  /* SolidWorks fix */
+  .skills-section .cell-row:last-child .cell:nth-child(4) { /* SolidWorks */
+    padding: 10px 14px;
+  }
+  
+  .skills-section .cell-row:last-child .cell:nth-child(4) span { /* SolidWorks */
+    font-size: 12.5px;
+  }
+  
+  .skills-section .cell-row {
+    gap: 12px;
+  }
+}
+
+/* Mobile - 2x4 grid */
+@media (max-width: 575px) {
+  #skills {
+    min-height: 450px; /* Increased for better fit */
+    padding: 20px 15px !important;
+  }
+  
+  .skills-section .cells {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 420px; /* Slightly wider for mobile */
+  }
+  
+  .skills-section .cell-row {
+    display: contents;
+  }
+  
+  .skills-section .cell {
+    padding: 14px 10px;
+    min-height: 80px; /* Taller for vertical layout */
+    flex-direction: column;
+    gap: 8px !important;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* All cells centered on mobile */
+  .skills-section .cell .logo-container {
+    width: 36px;
+    height: 36px;
+    margin: 0 auto !important;
+    margin-bottom: 6px !important;
+  }
+  
+  .skills-section .cell span {
+    font-size: 14px;
+    white-space: normal;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    line-height: 1.1;
+  }
+  
+  /* SolidWorks on mobile */
+  .skills-section .cell:nth-child(8) span { /* Assuming SolidWorks is 8th */
+    font-size: 13px;
+    white-space: normal;
+    word-break: break-word;
+  }
+  
+  /* Mobile logo adjustments */
+  .skills-section .cell:nth-child(1) img,
+  .skills-section .cell:nth-child(2) img,
+  .skills-section .cell:nth-child(3) img,
+  .skills-section .cell:nth-child(4) img {
+    width: 32px;
+  }
+  
+  .skills-section .cell:nth-child(5) img,
+  .skills-section .cell:nth-child(6) img,
+  .skills-section .cell:nth-child(7) img,
+  .skills-section .cell:nth-child(8) img {
+    height: 32px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 400px) {
+  #skills {
+    min-height: 480px;
+    padding: 15px 10px !important;
+  }
+  
+  .skills-section .cells {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 350px;
+  }
+  
+  .skills-section .cell {
+    padding: 12px 8px;
+    min-height: 75px;
+    gap: 6px !important;
+  }
+  
+  .skills-section .cell .logo-container {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 5px !important;
+  }
+  
+  .skills-section .cell span {
+    font-size: 12.5px;
+    line-height: 1.1;
+  }
+  
+  /* SolidWorks on very small screens */
+  .skills-section .cell:nth-child(8) span { /* Assuming SolidWorks is 8th */
+    font-size: 12px;
+  }
+  
+  /* Adjust logos */
+  .skills-section .cell:nth-child(1) img,
+  .skills-section .cell:nth-child(2) img,
+  .skills-section .cell:nth-child(3) img,
+  .skills-section .cell:nth-child(4) img {
+    width: 28px;
+  }
+  
+  .skills-section .cell:nth-child(5) img,
+  .skills-section .cell:nth-child(6) img,
+  .skills-section .cell:nth-child(7) img,
+  .skills-section .cell:nth-child(8) img {
+    height: 28px;
+  }
+
+  
+}
+/* Center Vivado more perfectly */
+.skills-section .cell-row:last-child .cell:nth-child(2) { /* Vivado */
+  justify-content: center;
+  padding: 15px 15px;
+}
+
+.skills-section .cell-row:last-child .cell:nth-child(2) .logo-container {
+  margin-right: 8px;
+  margin-left: 0;
+}
+
+.skills-section .cell-row:last-child .cell:nth-child(2) span {
+  justify-content: center;
+  text-align: center;
+  flex: none;
+  width: auto;
+  margin-left: 0;
+}
+
+.vivado{
+  margin-left: 5px;
+}
+
+.AMD{
+  margin-left:15px;
+}
+
+.Header{
+  font-size: 40px;
+}
+/* Translucent black background for all content cards */
+.project,
+.section-card,
+.edu-entry,
+.extracurricular-card,
+.ndp-wrapper,
+#experience .project {
+  background-color: rgba(0, 0, 0, 0.4) !important; /* adjust opacity here */
+  backdrop-filter: blur(6px); /* optional glass effect */
+}
+/* Fade in + move UP animation */
+section {
+  opacity: 0;
+  transform: translateY(40px); /* start lower */
+  animation: fadeUp 0.9s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0); /* move upward into place */
+  }
+}
+/* Education Entry - Match Project/Experience card size */
+.edu-entry {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(6px);
+  padding: 25px 30px !important;
+  border-radius: 15px;
+  border: 1px solid grey;
+  margin-top: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Education hover effect to match other cards */
+.edu-entry:hover {
+  transform: translateY(-5px);
+  border-color: #0077cc;
+  box-shadow: 0 8px 25px rgba(0, 119, 204, 0.3);
+}
+
+/* Adjust the school header to be consistent */
+.edu-entry .school-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* Remove the problematic filter from TMU logo */
+.edu-entry .school-header img {
+  height: 30px !important;
+  width: auto;
+  /* REMOVE this line: filter: brightness(0) invert(1); */
+}
+
+/* Education text styling to match project content */
+.edu-entry h3 {
+  font-size: 22px;
+  margin: 0;
+  color: white;
+}
+
+.edu-entry p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.edu-entry p strong {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Make sure the education section has proper spacing */
+#education h2.Header {
+  margin-bottom: 30px !important;
+}
+
+/* Ensure the education section box has enough padding */
+#education.section-box {
+  padding-bottom: 40px !important;
+}
+/* Style for school header inside project card */
+.project .school-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.project .school-header h3 {
+  font-size: 22px;
+  margin: 0;
+  color: white;
+}
+
+/* Make education project card match extracurricular card size */
+#education .project {
+  min-height: 200px !important;
+  padding: 25px 30px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+/* Make sure the TMU logo and text are properly aligned */
+#education .project .school-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 15px !important;
+  margin-bottom: 20px !important;
+}
+
+#education .project .school-header img {
+  height: 30px !important;
+  width: auto !important;
+}
+
+#education .project .school-header h3 {
+  font-size: 22px !important;
+  margin: 0 !important;
+  color: white !important;
+}
+
+#education .project p {
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+  margin-bottom: 10px !important;
+}
+
+/* Ensure hover effect works */
+#education .project:hover {
+  transform: translateY(-5px) !important;
+  border-color: #0077cc !important;
+  box-shadow: 0 8px 25px rgba(0, 119, 204, 0.3) !important;
+}
+/* Tighten spacing between all main sections */
+section,
+.section-box,
+.projects-section {
+  margin-top: 35px !important;
+  margin-bottom: 35px !important;
+}
+/* Reduce distance between header and previous section */
+section h2,
+.section-box h2 {
+  margin-top: 0;
+  margin-bottom: 18px; /* keeps it readable but tight */
+}
+/* Reduce gap after last card in a section */
+section .project:last-child,
+section .extracurricular-card:last-child,
+section .edu-entry:last-child {
+  margin-bottom: 0;
+}
+/* Reduce vertical padding inside sections */
+section,
+.section-box,
+.projects-section,
+#skills,
+#education,
+#experience,
+#ec {
+  padding-top: 25px !important;
+  padding-bottom: 30px !important;
+}
+/* Project header layout */
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.project-github {
+  position: absolute;
+  top: 50%;
+  right: 100px;              /* move further right/left freely */
+  transform: translateY(-50%);
+  font-size: 100px;
+  color: white;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.project-github:hover {
+  transform: translateY(-50%) scale(1.1);
+  opacity: 0.85;
+}
+
+
+.project {
+  position: relative;
+  padding-right: 130px; /* reserves space for 80px icon + breathing room */
+}
+
+
+.project-header {
+  display: block;
+}
+
+/* ---- Rendering stability fix (no visual change) ---- */
+.project,
+.section-box,
+.projects-section {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
