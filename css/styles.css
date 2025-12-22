@@ -4,14 +4,15 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: black;
+  background: linear-gradient(270deg, #101012, rgb(14, 10, 55), #0c0b0e);
+  background-size: 400% 400%;
+  animation: moveGradient 10s ease infinite;
   color: white;
-  max-width: 1200px;
-  margin: auto;
+  margin: 0;
 }
+
 
 a {
   text-decoration: none;
@@ -108,107 +109,6 @@ nav .right a i {
 
 
 
-/* Skills section - match Projects section height */
-#skills {
-  padding: 30px 50px !important; /* Increased padding */
-  min-height: 450px; /* Increased minimum height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  
-  border-radius: 70px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  position: relative;
-}
-
-/* Skills section heading */
-#skills h2 {
-  margin-bottom: 40px; /* More space below heading */
-  font-size: 35px;
-}
-
-/* Skills cells container - fill vertical space */
-.skills-section .cells {
-  display: flex;
-  flex-direction: column;
-  gap: 35px; /* Increased gap between rows */
-  margin-top: 20px;
-  flex: 1; /* Take up available space */
-  justify-content: space-evenly; /* Evenly distribute rows */
-  min-height: 300px; /* Ensure minimum height for content */
-}
-
-/* Make both rows the same length by distributing cells evenly */
-.skills-section .cell-row {
-  display: flex;
-  flex-wrap: nowrap; /* Prevent wrapping within row */
-  justify-content: center;
-  gap: 30px; /* Increased gap between cells */
-  width: 100%;
-  padding: 15px 0;
-  align-items: center;
-}
-
-/* Individual skill cells - even bigger and matching */
-.skills-section .cell {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  border: 2px solid #555;
-  padding: 22px 35px; /* Even larger padding */
-  border-radius: 15px; /* More rounded */
-  background-color: rgba(0, 0, 0, 0.4);
-  flex: 0 0 auto; /* Don't grow or shrink */
-  min-width: 200px; /* Wider minimum width */
-  justify-content: center;
-  white-space: nowrap;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Larger skill icons */
-.skills-section .cell img {
-  width: 42px; /* Even bigger icons */
-  height: 42px;
-  object-fit: contain;
-}
-
-/* Larger text in skill cells */
-.skills-section .cell span {
-  font-size: 19px; /* Even bigger text */
-  font-weight: 500;
-  color: white;
-}
-
-/* Hover effect for skill cells */
-.skills-section .cell:hover {
-  transform: translateY(-6px) scale(1.05);
-  border-color: #0077cc;
-  box-shadow: 0 10px 25px rgba(0, 119, 204, 0.5);
-  background-color: rgba(0, 119, 204, 0.15);
-}
-
-/* Ensure both rows have the same number of cells and same width */
-.skills-section .cell-row:first-child .cell {
-  /* First row cells */
-}
-
-.skills-section .cell-row:last-child .cell {
-  /* Second row cells - same styling */
-}
-
-/* Project section reference - ensure they match */
-.projects-section {
-  min-height: 500px; /* Reference height for projects */
-}
-
-/* Make skills section visually similar in height to projects */
-#skills:after {
-  content: '';
-  display: block;
-  height: 20px;
-}
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {
@@ -339,42 +239,6 @@ nav .right a i {
   }
 }
 
-/* Testimony Section */
-.testimony-section {
-  padding: 60px 40px;
-  background-color:black;
-  border:5px solid;
-
-  border-radius:70px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-.testimony-section h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.testimony-section .group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  align-items: center;
-}
-
-.testimony-section .person-details {
-  flex: 1;
-  text-align: center;
-}
-
-.testimony-section .person-details img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
 
 .testimony-section .text {
   flex: 2;
@@ -785,9 +649,7 @@ nav .right a:hover {
   transform: scale(1.05);
 }
 /* Website fade in on load */
-body {
-  animation: pageFadeIn 1s ease-in-out;
-}
+
 
 @keyframes pageFadeIn {
   from {
@@ -1199,17 +1061,7 @@ html {
 }
 
 /* Background + centered content */
-body {
-  min-height: 100vh;                      /* allows page to expand */
-  background: linear-gradient(270deg,#101012,rgb(14, 10, 55), #0c0b0e);
-  background-size: 400% 400%;
-  animation: moveGradient 10s ease infinite;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;                    /* centers horizontally */
-  justify-content: flex-start;            /* keeps content at top */
-}
     
 @keyframes moveGradient {
   0% { background-position: 0% 50%; }
@@ -1957,4 +1809,118 @@ section,
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
+}
+
+/* ---- Page wrapper ---- */
+.page-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ---- Global responsive images ---- */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ================= NAVBAR ================= */
+nav {
+  width: 100%;
+  padding: 28px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+nav .left,
+nav .right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* ================= HERO SECTION ================= */
+
+/* ---- DESKTOP: SIDE-BY-SIDE (FORCED) ---- */
+/* ================= HERO LAYOUT FINAL OVERRIDE ================= */
+
+/* FORCE DESKTOP SIDE-BY-SIDE */
+.hero-section {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* TEXT LEFT */
+.hero-section .text {
+  flex: 1;
+}
+
+/* IMAGE RIGHT */
+.hero-section .headshot {
+  flex-shrink: 0;
+}
+
+/* HERO LINKS INLINE (DESKTOP) */
+.hero-section .links {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+}
+
+/* MOBILE STACK */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column !important;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-section .headshot {
+    order: -1;
+    margin-bottom: 20px;
+  }
+
+  .hero-section .links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+/* ================= HERO LINK BUTTON NORMALIZATION ================= */
+
+/* Remove card-like stretching */
+.hero-section .links a {
+  flex: 0 0 auto;        /* STOP equal width */
+  width: auto;           /* STOP full-width */
+  padding: 10px 14px;    /* controlled spacing */
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* Keep icon + text inline */
+.hero-section .links a i,
+.hero-section .links a span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Prevent multi-line wrapping inside buttons */
+.hero-section .links a span {
+  white-space: nowrap;
 }
